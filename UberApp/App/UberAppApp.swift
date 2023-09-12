@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct UberAppApp: App {
+    // to make only on object and be sengular
+    @StateObject var locationViewModel = LocationSearchViewViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(locationViewModel)
         }
     }
 }
